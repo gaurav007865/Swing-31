@@ -1,3 +1,7 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -7,6 +11,8 @@ public class UiwithDatabase {
 
 	public static void main(String[] args) {
 		JFrame frame=new JFrame("Gaurav");//Frame Created
+		
+		Database db=new Database();
 		
 		//Name Label
 		JLabel label1=new JLabel("Name : ");
@@ -32,18 +38,64 @@ public class UiwithDatabase {
 		JTextField input_age=new JTextField();
 		input_age.setBounds(60, 80, 110, 20);
 		
+		JLabel final_label=new JLabel("Result : ");
+		final_label.setBounds(150, 150, 90, 20);
 		
 		JButton insert_button=new JButton("insert");
 		insert_button.setBounds(20, 110, 90, 20);
 		
+		insert_button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Insert Button Clicked");
+				int id=Integer.parseInt(input_id.getText());
+				String name=input_name.getText();
+				int age=Integer.parseInt(input_age.getText());
+				try {
+					String output=db.insertd(id, name, age);
+					final_label.setText(output);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		
+		
+		
 		JButton update_button=new JButton("update");
 		update_button.setBounds(130, 110, 90, 20);
+		
+		update_button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Update Button Clicked");
+				
+			}
+		});
+		
+		
 		
 		JButton delete_button=new JButton("delete");
 		delete_button.setBounds(240, 110, 90, 20);
 		
-		JLabel final_label=new JLabel("Result : ");
-		final_label.setBounds(150, 150, 90, 20);
+		delete_button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Delete Button Clicked");
+				
+			}
+		});
+		
+		
+		
+		
 		
 		
 		JLabel description=new JLabel("This application provides an easy-to-use interface");
