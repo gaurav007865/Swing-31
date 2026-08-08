@@ -48,7 +48,7 @@ public class UiwithDatabase {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Insert Button Clicked");
+				//System.out.println("Insert Button Clicked");
 				int id=Integer.parseInt(input_id.getText());
 				String name=input_name.getText();
 				int age=Integer.parseInt(input_age.getText());
@@ -74,8 +74,20 @@ public class UiwithDatabase {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Update Button Clicked");
-				
+				//System.out.println("Update Button Clicked");
+				int id=Integer.parseInt(input_id.getText());
+				String name=input_name.getText();
+				int age=Integer.parseInt(input_age.getText());
+				try {
+					String output=db.updated(id, name, age);
+					final_label.setText(output);
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		
@@ -88,8 +100,15 @@ public class UiwithDatabase {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Delete Button Clicked");
-				
+				//System.out.println("Delete Button Clicked");
+				int id=Integer.parseInt(input_id.getText());
+				try {
+					String output=db.deleted(id);
+					final_label.setText(output);
+				} catch (ClassNotFoundException | SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		
