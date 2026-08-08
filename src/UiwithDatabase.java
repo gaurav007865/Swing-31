@@ -1,3 +1,4 @@
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -32,6 +33,27 @@ public class UiwithDatabase {
 		input_age.setBounds(60, 80, 110, 20);
 		
 		
+		JButton insert_button=new JButton("insert");
+		insert_button.setBounds(20, 110, 90, 20);
+		
+		JButton update_button=new JButton("update");
+		update_button.setBounds(130, 110, 90, 20);
+		
+		JButton delete_button=new JButton("delete");
+		delete_button.setBounds(240, 110, 90, 20);
+		
+		JLabel final_label=new JLabel("Result : ");
+		final_label.setBounds(150, 150, 90, 20);
+		
+		
+		JLabel description=new JLabel("This application provides an easy-to-use interface");
+		description.setBounds(40, 200, 1000, 20);
+		
+		frame.add(description);
+		frame.add(final_label);
+		frame.add(delete_button);
+		frame.add(update_button);
+		frame.add(insert_button);
 		frame.add(label1);
 		frame.add(label2);
 		frame.add(label3);
