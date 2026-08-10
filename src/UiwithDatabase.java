@@ -113,11 +113,7 @@ public class UiwithDatabase {
 		});
 		
 		
-		
-		
-		
-		
-		JLabel description=new JLabel("This application provides an easy-to-use interface");
+		JLabel description=new JLabel("Basic CRUD(Create,Read,Update,Delete) Operations");
 		description.setBounds(40, 200, 1000, 20);
 		
 		frame.add(description);

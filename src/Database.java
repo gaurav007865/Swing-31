@@ -10,7 +10,7 @@ public class Database {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		//System.out.println("Step 1 Completed");
 		
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cod","root","abc123");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:port/database_name","username","password");
 		//System.out.println("Connected");
 		
 		//Statement st=con.createStatement();
@@ -38,7 +38,7 @@ public class Database {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		//System.out.println("Step 1 Completed");
 		
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cod","root","abc123");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:Port_number/database_name","username","password");
 		//System.out.println("Connected");
 		
 		//Statement st=con.createStatement();
@@ -65,7 +65,7 @@ public class Database {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		//System.out.println("Step 1 Completed");
 		
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/cod","root","abc123");
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:port_number/database_name","username","password");
 		//System.out.println("Connected");
 		
 		//Statement st=con.createStatement();
